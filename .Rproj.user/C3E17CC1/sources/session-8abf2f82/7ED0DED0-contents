@@ -1,0 +1,52 @@
+library(haven)
+library(dplyr)
+library(ggplot2)
+library(janitor)
+
+# Load and clean
+data <- read_dta("C:/Users/Christian Casas/OneDrive - studhsf/Documents/Masters - HS Fresenius/2nd Semester/Data Science for Business/analysis/data/analysis_data.dta") %>%
+  janitor::clean_names()
+
+# Filter for Xyzal 80ct Tablet (non-multipack)
+data_filtered <- data %>%
+  filter(
+    brand == "Xyzal",
+    form == "Tablet",
+    size == 80,
+    multipack == 1,
+    flag_imputed_price != 1
+  ) %>%
+  distinct(website, period_id, .keep_all = TRUE)
+
+# Get upper Y-axis limit for clean breaks
+x_max <- max(ceiling(max(data_filtered$price, na.rm = TRUE) / 200) * 200, 12000)
+
+# Plot
+ggplot(data_filtered, aes(x = period_id, y = price, color = website)) +
+  geom_line(size = 0.9) +
+  scale_color_manual(values = c(
+    "A" = "black",
+    "B" = "#98bf64",
+    "C" = "darkblue",
+    "D" = "brown",
+    "E" = "#DAA520"
+  )) +
+  scale_x_continuous(
+    limits = c(0, x_max),
+    breaks = seq(0, x_max, by = 2400)
+  ) +
+  labs(
+    title = "Panel A. Xyzal, tablets, 80 count",
+    x = "Hours Elapsed in Sample",
+    y = "Price",
+    color = "Retailer"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.background = element_rect(fill = "white", color = "gray80", size = 0.4),
+    legend.box.background = element_rect(color = "gray60"),
+    legend.box.margin = margin(t = 5, r = 5, b = 5, l = 5)
+  )
+
