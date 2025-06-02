@@ -1,9 +1,9 @@
 {
     "id": "98B2199C",
-    "path": "~/2ndsesh/PPT/PPT.qmd",
-    "project_path": "PPT.qmd",
+    "path": "~/2ndsesh/PPT/index.qmd",
+    "project_path": "index.qmd",
     "type": "quarto_markdown",
-    "hash": "2872760280",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1748877470532.0,
@@ -15,18 +15,18 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "93,0",
+        "cursorPosition": "97,0",
         "scrollLine": "0",
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "2707:1455"
+        "rmdVisualModeLocation": "4142:2412"
     },
     "folds": "",
-    "lastKnownWriteTime": 1748877981,
+    "lastKnownWriteTime": 1748878287,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1748877981260,
+    "last_content_update": 1748878287,
     "read_only": false,
     "read_only_alternatives": []
 }
