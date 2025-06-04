@@ -1,0 +1,453 @@
+---
+format:
+  revealjs:
+    slide-number: true
+    toc: false
+    theme: simple
+    css: styles.css
+  pdf:
+    documentclass: article
+bibliography: references.bib
+csl: apa.csl
+editor: visual
+---
+## Choosing a Paper
+::: {.smaller}
+At the start of our project, we considered two potential papers:\
+
+**1.** ***A Reputational Theory of Firm Dynamics*** (@Board2022Firm)\
+**2.** ***Artificial intelligence, algorithmic pricing, and collusion*** (@calvano2020pricing)\
+
+![Consumers Observe Firms’ Investment](images/Figure1PaperA.png){#fig-1 fig-align="center" width=50%}
+
+The first paper appeared relatively straightforward, with simple graphs that seemed easy to replicate (see @fig-1 from @Board2022Firm). This made it an attractive choice initially.\
+
+However, after reviewing the replication package for the second paper (@calvano2020pricing)—described in the ***README*** file ([📥Open](README Paper.pdf)), we noticed that, despite its complexity, it offered some compelling advantages.
+:::
+## 
+::: {.smaller}
+The package also includes multiple well-documented Stata scripts, such as ***07_summary_stats.do*** ([📥Open](07_summary_stats.do)), which are used to generate the tables and figures in the paper. Initially, we found the concepts in this paper quite complex and the graphs and tables (see @fig-2 and @fig-3 ) more challenging to replicate.\
+Additionally, we discovered that the first paper used **simulated data**, which reduced its appeal for our goals.\
+
+![Price Differences for Identical Products Relative to Retailer A](images/T1PaperB.png){#fig-2 fig-align="center" width=50%}
+
+Ultimately, we chose to proceed with our "Plan B": the Calvano et al. paper. Despite its complexity, it uses real, proprietary data and provides a thoroughly organized and transparent replication package—factors that aligned better with our objectives and offered a more enriching learning experience.\
+
+:::
+
+## Issues when coding
+::: {.smaller}
+\
+Throughout our journey, we encountered several challenges, which we can summarize as follows:\
+\
+**1.** Interpreting the Stata scripts and mapping each section to its corresponding chart or table in the paper.\
+
+**2.** Managing GitHub publishing—dealing with data size limitations and the dilemma between using a public or private repository.\
+
+**3.** Troubleshooting project structure issues, such as realizing the index file was mistakenly placed outside the main working directory.\
+
+**4.** Handling R crashes—there were moments when R would freeze or become unresponsive; using Ctrl+C proved useful to "unstuck" it.\
+
+**5.** Fine-tuning visualizations—adjusting scaling, colors, and layout to match the presentation style in @calvano2020pricing, while ensuring the underlying data aligned correctly.\
+:::
+
+## Graph Replication
+::: {.smaller}
+For our first replication, we used the data source ***analysis_data.dta*** and followed the script ***07_summary_stats.do*** ([📥Open](07_summary_stats.do))  to reproduce ***Figure 1: Example Time Series of Prices for Identical Products across Retailers***, found on page 118 of @calvano2020pricing.
+:::
+
+```{r}
+#| label: Code2
+#| echo: true
+
+library(haven)
+library(dplyr)
+library(ggplot2)
+library(janitor)
+library(patchwork) 
+# Load and clean
+data <- read_dta("C:/Users/Christian Casas/OneDrive - studhsf/Documents/Masters - HS Fresenius/2nd Semester/Data Science for Business/analysis/data/analysis_data.dta") %>%
+  janitor::clean_names()
+
+# Filter for Xyzal 80ct Tablet (non-multipack)
+data_xyzal <- data %>%
+  filter(
+    brand == "Xyzal",
+    form == "Tablet",
+    size == 80,
+    multipack == 1,
+    flag_imputed_price != 1
+  ) %>%
+  distinct(website, period_id, .keep_all = TRUE)
+
+# Get upper Y-axis limit for clean breaks
+x_max <- max(ceiling(max(data_xyzal$price, na.rm = TRUE) / 200) * 200, 12000)
+
+
+# Filter for Claritin
+data_claritin <- data %>%
+  filter(
+    brand == "Claritin",
+    form == "Tablet",
+    size == 70,
+    multipack == 1,
+    flag_imputed_price != 1
+  ) %>%
+  distinct(website, period_id, .keep_all = TRUE)
+
+x_max <- max(ceiling(max(data_claritin$price, na.rm = TRUE) / 200) * 200, 12000)
+
+#1
+p1 <- ggplot(data_xyzal, aes(x = period_id, y = price, color = website)) +
+  geom_line(size = 0.9) +
+  scale_color_manual(values = c("A" = "black", "B" = "#98bf64", "C" = "darkblue", "D" = "brown", "E" = "#DAA520")) +
+  scale_x_continuous(limits = c(0, x_max), breaks = seq(0, x_max, by = 2400)) +
+  labs(title = "Panel A. Xyzal, tablets, 80 count", x = "Hours Elapsed in Sample", y = "Price") +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "bottom", legend.title = element_blank())
+# First plot
+p2 <- ggplot(data_claritin, aes(x = period_id, y = price, color = website)) +
+  geom_line(size = 0.9) +
+  scale_color_manual(values = c("A" = "black", "B" = "#98bf64", "C" = "darkblue", "D" = "brown", "E" = "#DAA520")) +
+  scale_x_continuous(limits = c(0, x_max), breaks = seq(0, x_max, by = 2400)) +
+  labs(title = "Panel B. Claritin, tablets, 70 count", x = "Hours Elapsed in Sample", y = "Price") +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "bottom", legend.title = element_blank())
+
+# Display plots side by side
+p1 + p2 + plot_layout(ncol = 2)
+
+```
+
+## 
+::: {.smaller}
+Original from ***The Effect of Gender on Credit Access*** (@calvano2020pricing):\
+
+![Example Time Series of Prices for Identical Products across Retailers](images/F2PaperB.png){#fig-3 fig-align="center" width=55%}
+
+**Replication:**
+```{r}
+#| label: Code3
+#| echo: false
+#| out-width: 55%
+#| fig.align: "center"
+
+library(haven)
+library(dplyr)
+library(ggplot2)
+library(janitor)
+library(patchwork) 
+# Load and clean
+data <- read_dta("C:/Users/Christian Casas/OneDrive - studhsf/Documents/Masters - HS Fresenius/2nd Semester/Data Science for Business/analysis/data/analysis_data.dta") %>%
+  janitor::clean_names()
+
+# Filter for Xyzal 80ct Tablet (non-multipack)
+data_xyzal <- data %>%
+  filter(
+    brand == "Xyzal",
+    form == "Tablet",
+    size == 80,
+    multipack == 1,
+    flag_imputed_price != 1
+  ) %>%
+  distinct(website, period_id, .keep_all = TRUE)
+
+# Get upper Y-axis limit for clean breaks
+x_max <- max(ceiling(max(data_xyzal$price, na.rm = TRUE) / 200) * 200, 12000)
+
+
+# Filter for Claritin
+data_claritin <- data %>%
+  filter(
+    brand == "Claritin",
+    form == "Tablet",
+    size == 70,
+    multipack == 1,
+    flag_imputed_price != 1
+  ) %>%
+  distinct(website, period_id, .keep_all = TRUE)
+
+x_max <- max(ceiling(max(data_claritin$price, na.rm = TRUE) / 200) * 200, 12000)
+
+#1
+p1 <- ggplot(data_xyzal, aes(x = period_id, y = price, color = website)) +
+  geom_line(size = 0.9) +
+  scale_color_manual(values = c("A" = "black", "B" = "#98bf64", "C" = "darkblue", "D" = "brown", "E" = "#DAA520")) +
+  scale_x_continuous(limits = c(0, x_max), breaks = seq(0, x_max, by = 2400)) +
+  labs(title = "Panel A. Xyzal, tablets, 80 count", x = "Hours Elapsed in Sample", y = "Price") +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "bottom", legend.title = element_blank())
+# First plot
+p2 <- ggplot(data_claritin, aes(x = period_id, y = price, color = website)) +
+  geom_line(size = 0.9) +
+  scale_color_manual(values = c("A" = "black", "B" = "#98bf64", "C" = "darkblue", "D" = "brown", "E" = "#DAA520")) +
+  scale_x_continuous(limits = c(0, x_max), breaks = seq(0, x_max, by = 2400)) +
+  labs(title = "Panel B. Claritin, tablets, 70 count", x = "Hours Elapsed in Sample", y = "Price") +
+  theme_minimal(base_size = 14) +
+  theme(legend.position = "bottom", legend.title = element_blank())
+
+# Display plots side by side
+p1 + p2 + plot_layout(ncol = 2)
+
+```
+:::
+
+## Table Replication
+::: {.smaller}
+For our second replication, we followed the same logic as with the graph and used the data source ***analysis_data.dta*** and followed the script ***07_summary_stats.do*** ([📥Open](07_summary_stats.do))  to reproduce ***Table 1—Daily Statistics for Hourly Price Data***, found on page 117 of @calvano2020pricing.
+
+We are currently facing the following key issues:
+:::
+
+```{r}
+#| label: Code5
+#| echo: true
+
+library(haven)
+library(dplyr)
+library(tidyr)
+library(janitor)
+library(gt)
+library(tibble)
+
+# Load and clean
+df <- read_dta("C:/Users/Christian Casas/OneDrive - studhsf/Documents/Masters - HS Fresenius/2nd Semester/Data Science for Business/analysis/data/analysis_data.dta") %>%
+  clean_names() %>%
+  filter(!is.na(price), flag_imputed_price != 1)
+
+
+# Ensure proper types
+df <- df %>%
+  mutate(
+    date = as.Date(date),
+    price_change = as.integer(price_change),
+    is_observed = as.integer(is_observed)
+  )
+
+# Construct abs_price_change only where price_change occurred
+df <- df %>%
+  group_by(website, product_website_id) %>%
+  arrange(date, .by_group = TRUE) %>%
+  mutate(abs_price_change = if_else(price_change == 1, abs(price - lag(price)), NA_real_)) %>%
+  ungroup()
+
+# Collapse to daily product-level data
+daily_df <- df %>%
+  group_by(website, product_website_id, date) %>%
+  summarise(
+    n_price_change = sum(price_change, na.rm = TRUE),
+    abs_price_change = sum(abs_price_change, na.rm = TRUE),
+    observations = sum(is_observed, na.rm = TRUE),
+    has_price_change = as.integer(any(price_change == 1)),
+    price = mean(price, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Collapse to website-date level
+summary_df <- daily_df %>%
+  group_by(website, date) %>%
+  summarise(
+    n_products = n(),
+    n_price_change = sum(n_price_change, na.rm = TRUE),
+    abs_price_change = sum(abs_price_change, na.rm = TRUE),
+    has_price_change = sum(has_price_change, na.rm = TRUE),
+    observations = sum(observations, na.rm = TRUE),
+    price_mean = mean(price, na.rm = TRUE),
+    price_sd = sd(price, na.rm = TRUE),
+    price_10 = quantile(price, 0.10, na.rm = TRUE),
+    price_90 = quantile(price, 0.90, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    price_change_per_product = n_price_change / n_products,
+    has_price_change_per_product = has_price_change / n_products,
+    obs_per_product = observations / n_products,
+    avg_abs_price_change = abs_price_change / n_price_change
+  )
+
+# Compute final summary stats per website
+stats_by_website <- summary_df %>%
+  group_by(website) %>%
+  summarise(
+    `Count of Products` = mean(n_products, na.rm = TRUE),
+    `Observations per Product` = mean(obs_per_product, na.rm = TRUE),
+    `Price: Mean` = mean(price_mean, na.rm = TRUE),
+    `Price: 10th Percentile` = mean(price_10, na.rm = TRUE),
+    `Price: 90th Percentile` = mean(price_90, na.rm = TRUE),
+    `Mean Absolute Price Change` = mean(avg_abs_price_change, na.rm = TRUE),
+    `Price Changes per Product` = mean(price_change_per_product, na.rm = TRUE),
+    `Share of Products with a Price Change` = mean(has_price_change_per_product, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Add "Total" row across all websites
+total_row <- summary_df %>%
+  summarise(
+    website = "Total",
+    `Count of Products` = mean(n_products, na.rm = TRUE),
+    `Observations per Product` = mean(obs_per_product, na.rm = TRUE),
+    `Price: Mean` = mean(price_mean, na.rm = TRUE),
+    `Price: 10th Percentile` = mean(price_10, na.rm = TRUE),
+    `Price: 90th Percentile` = mean(price_90, na.rm = TRUE),
+    `Mean Absolute Price Change` = mean(avg_abs_price_change, na.rm = TRUE),
+    `Price Changes per Product` = mean(price_change_per_product, na.rm = TRUE),
+    `Share of Products with a Price Change` = mean(has_price_change_per_product, na.rm = TRUE)
+  )
+
+# Combine
+final_stats <- bind_rows(stats_by_website, total_row)
+
+# Round for display
+final_stats_rounded <- final_stats %>%
+  mutate(across(where(is.numeric), ~ round(.x, 2))) %>%
+  
+    column_to_rownames("website") %>%
+  t() %>%
+  as.data.frame()%>%
+rownames_to_column("Statistic")
+
+
+# Display
+final_stats_rounded %>%
+  gt() %>%
+  tab_header(title = "Table 1 — Daily Statistics for Hourly Price Data")
+
+
+```
+
+## 
+::: {.smaller}
+Original from ***The Effect of Gender on Credit Access*** (@calvano2020pricing):\
+
+![Example Time Series of Prices for Identical Products across Retailers](images/T2PaperB.png){#fig-4 fig-align="center" width=55%}
+
+**Replication:**
+```{r}
+#| label: Code6
+#| echo: false
+#| fig-align: center
+#| out-width: 45%
+
+library(haven)
+library(dplyr)
+library(tidyr)
+library(janitor)
+library(gt)
+library(tibble)
+
+# Load and clean
+df <- read_dta("C:/Users/Christian Casas/OneDrive - studhsf/Documents/Masters - HS Fresenius/2nd Semester/Data Science for Business/analysis/data/analysis_data.dta") %>%
+  clean_names() %>%
+  filter(!is.na(price), flag_imputed_price != 1)
+
+
+# Ensure proper types
+df <- df %>%
+  mutate(
+    date = as.Date(date),
+    price_change = as.integer(price_change),
+    is_observed = as.integer(is_observed)
+  )
+
+# Construct abs_price_change only where price_change occurred
+df <- df %>%
+  group_by(website, product_website_id) %>%
+  arrange(date, .by_group = TRUE) %>%
+  mutate(abs_price_change = if_else(price_change == 1, abs(price - lag(price)), NA_real_)) %>%
+  ungroup()
+
+# Collapse to daily product-level data
+daily_df <- df %>%
+  group_by(website, product_website_id, date) %>%
+  summarise(
+    n_price_change = sum(price_change, na.rm = TRUE),
+    abs_price_change = sum(abs_price_change, na.rm = TRUE),
+    observations = sum(is_observed, na.rm = TRUE),
+    has_price_change = as.integer(any(price_change == 1)),
+    price = mean(price, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Collapse to website-date level
+summary_df <- daily_df %>%
+  group_by(website, date) %>%
+  summarise(
+    n_products = n(),
+    n_price_change = sum(n_price_change, na.rm = TRUE),
+    abs_price_change = sum(abs_price_change, na.rm = TRUE),
+    has_price_change = sum(has_price_change, na.rm = TRUE),
+    observations = sum(observations, na.rm = TRUE),
+    price_mean = mean(price, na.rm = TRUE),
+    price_sd = sd(price, na.rm = TRUE),
+    price_10 = quantile(price, 0.10, na.rm = TRUE),
+    price_90 = quantile(price, 0.90, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    price_change_per_product = n_price_change / n_products,
+    has_price_change_per_product = has_price_change / n_products,
+    obs_per_product = observations / n_products,
+    avg_abs_price_change = abs_price_change / n_price_change
+  )
+
+# Compute final summary stats per website
+stats_by_website <- summary_df %>%
+  group_by(website) %>%
+  summarise(
+    `Count of Products` = mean(n_products, na.rm = TRUE),
+    `Observations per Product` = mean(obs_per_product, na.rm = TRUE),
+    `Price: Mean` = mean(price_mean, na.rm = TRUE),
+    `Price: 10th Percentile` = mean(price_10, na.rm = TRUE),
+    `Price: 90th Percentile` = mean(price_90, na.rm = TRUE),
+    `Mean Absolute Price Change` = mean(avg_abs_price_change, na.rm = TRUE),
+    `Price Changes per Product` = mean(price_change_per_product, na.rm = TRUE),
+    `Share of Products with a Price Change` = mean(has_price_change_per_product, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Add "Total" row across all websites
+total_row <- summary_df %>%
+  summarise(
+    website = "Total",
+    `Count of Products` = mean(n_products, na.rm = TRUE),
+    `Observations per Product` = mean(obs_per_product, na.rm = TRUE),
+    `Price: Mean` = mean(price_mean, na.rm = TRUE),
+    `Price: 10th Percentile` = mean(price_10, na.rm = TRUE),
+    `Price: 90th Percentile` = mean(price_90, na.rm = TRUE),
+    `Mean Absolute Price Change` = mean(avg_abs_price_change, na.rm = TRUE),
+    `Price Changes per Product` = mean(price_change_per_product, na.rm = TRUE),
+    `Share of Products with a Price Change` = mean(has_price_change_per_product, na.rm = TRUE)
+  )
+
+# Combine
+final_stats <- bind_rows(stats_by_website, total_row)
+
+# Round for display
+final_stats_rounded <- final_stats %>%
+  mutate(across(where(is.numeric), ~ round(.x, 2))) %>%
+  
+    column_to_rownames("website") %>%
+  t() %>%
+  as.data.frame()%>%
+rownames_to_column("Statistic")
+
+
+# Display
+final_stats_rounded %>%
+  gt() %>%
+  tab_header(title = "Table 1 — Daily Statistics for Hourly Price Data")%>%
+  opt_table_font(size = 12)
+
+```
+:::
+## 
+\
+\
+\
+\
+\
+👉 [Go Back to Index](index.html)\
+👉 [Next Presentation: Tony](https://rpubs.com/nanaosei95/1317786)
+
+## References
+

@@ -1,153 +1,108 @@
 ---
-title: "PPT"
-format: revealjs
+title: "Data Science for Business - Replication Project"
+author: "Tony Osei, Christian F. R. Casas"
+date: "06/06/2025"
+format:
+  html:
+    theme: cosmo
+    page-layout: full
+    toc: false
+    css: styles.css
+  apaquarto-docx: 
+    toc: false
+  apaquarto-html: 
+    toc: true
+  apaquarto-typst: 
+    keep-typ: true
+    list-of-figures: false
+    list-of-tables: false
+    toc: false
+    papersize: "us-letter"
+  apaquarto-pdf:
+    documentmode: man
+    keep-tex: true
+    pdf-engine: pdflatex
+    documentclass: article
+    theme: Madrid
+    fontsize: 11pt
+    slide-level: 2
+    tbl-cap-location: top
+    df-print: kable
+bibliography: references.bib
 editor: visual
-pdf: true
 ---
 
-## Choosing a Paper
+------------------------------------------------------------------------
 
-Paper A\
-Paper B
+## 🔍 About This Project
 
-Issues with A, although it seemed easy it was complicated because the source data was simulated and also the topic was too complicated to be replicated.\
-We chose Paper B mostly because it was a well documented Paper with own data
+This is part of a research exercise for replicating graphs and tables from [@calvano2020pricing] using **R** and **Quarto**.
 
-## Talking about the chosen Paper
+We focus on:
 
-References, describir the things to be replicated
+-   Summary statistics\
+-   Replication code using R\
+-   Data cleaning and transformation
 
--   Explain the data, the issues, how we understood
--   what issues we encounter?
+------------------------------------------------------------------------
 
-## Issues when coding how to correctly replicated 
+# 🎯 Research Replication
 
-ie. it was difficult to do the sizing, scaling, colors, also to determine which chart we were replicating
+We aim to replicate tables and charts taken from the paper ***The Effect of Gender on Credit Access*** (@calvano2020pricing), that was Published in *American Economic Review: Microeconomics*\
 
--   issues when publishing, data size, corrupt folder, issues private vs. public.
--   wrong path folder, had to find what was the original path folder because although we had everything, we weren't able to publish
--   reseting and changing the project path // the Git Repo to my actual working folder.
--   stucked when coding (Ctrl+C) unstuck it
+Please follow the next link to find the replication package and further information:\
+**DOI:** [10.1257/mic.20210158](https://doi.org/10.1257/mic.20210158)
 
-## Actual replication
+------------------------------------------------------------------------
 
-talk about the solutions and the issues, one project for the presentation, another for coding.
+## 🛠️ Tools Used
 
-```{r}
-#| label: Code.
-#| echo: true
-library(haven)
-library(dplyr)
-library(ggplot2)
-library(janitor)
+-   **R** (data analysis & visualization)\
+-   **Quarto** (reproducible publishing)\
+-   **GitHub Pages** (to share everything online)
 
-# Load and clean
-data <- read_dta("C:/Users/Christian Casas/OneDrive - studhsf/Documents/Masters - HS Fresenius/2nd Semester/Data Science for Business/analysis/data/analysis_data.dta") %>%
-  janitor::clean_names()
+-   **Libraries**:\ 
 
-# Filter for Xyzal 80ct Tablet (non-multipack)
-data_filtered <- data %>%
-  filter(
-    brand == "Xyzal",
-    form == "Tablet",
-    size == 80,
-    multipack == 1,
-    flag_imputed_price != 1
-  ) %>%
-  distinct(website, period_id, .keep_all = TRUE)
+-**haven:**: this library created by @haven1 allows R to read and write data files from statistical software like Stata, SPSS, and SAS.\
 
-# Get upper Y-axis limit for clean breaks, issue with the scaling since we had to stop at 12000, so it was force to stop al 12000
-x_max <- max(ceiling(max(data_filtered$price, na.rm = TRUE) / 200) * 200, 12000)
+-**dplyr:** provides a grammar of data manipulation, making it easy to filter, select, summarize, and transform data frames. (@dplyr)\
 
-# Plot
-ggplot(data_filtered, aes(x = period_id, y = price, color = website)) +
-  geom_line(size = 0.9) +
-  scale_color_manual(values = c(
-    "A" = "black",
-    "B" = "#98bf64",
-    "C" = "darkblue",
-    "D" = "brown",
-    "E" = "#DAA520"
-  )) +
-  #scale
-  scale_x_continuous(
-    limits = c(0, x_max),
-    breaks = seq(0, x_max, by = 2400)
-  ) +
-  labs(
-    title = "Panel A. Xyzal, tablets, 80 count",
-    x = "Hours Elapsed in Sample",
-    y = "Price",
-    color = "Retailer"
-  ) +
-  theme_minimal(base_size = 14) +
-  theme(
-    legend.position = "bottom",
-    legend.title = element_blank(),
-    legend.background = element_rect(fill = "white", color = "gray80", size = 0.4),
-    legend.box.background = element_rect(color = "gray60"),
-    legend.box.margin = margin(t = 5, r = 5, b = 5, l = 5)
-  )
+\-**ggplot:** As stated by @ggplot2 powerful and flexible system for creating static data visualizations using the grammar of graphics.\
 
-```
+\-       **janitor:** Offers simple functions for cleaning and formatting data, especially column names and tabular summaries.
 
-## Replication
+------------------------------------------------------------------------
 
-Here compare the paper's graph vs. ours
+## 📁 Repository
 
-```{r}
-#| label: Code2
-#| echo: false
-library(haven)
-library(dplyr)
-library(ggplot2)
-library(janitor)
+View the full repository here:\
+[🔗 github.com/christianfcasas/ProjectData](https://github.com/christianfcasas/ProjectData)
 
-# Load and clean
-data <- read_dta("C:/Users/Christian Casas/OneDrive - studhsf/Documents/Masters - HS Fresenius/2nd Semester/Data Science for Business/analysis/data/analysis_data.dta") %>%
-  janitor::clean_names()
+------------------------------------------------------------------------
 
-# Filter for Xyzal 80ct Tablet (non-multipack)
-data_filtered <- data %>%
-  filter(
-    brand == "Xyzal",
-    form == "Tablet",
-    size == 80,
-    multipack == 1,
-    flag_imputed_price != 1
-  ) %>%
-  distinct(website, period_id, .keep_all = TRUE)
+## 🎥 View the Presentation
+Click on the presentation you want to view:\
+👉 [Christian](try.html)\
+👉 [Tony](https://rpubs.com/nanaosei95/1317786)
 
-# Get upper Y-axis limit for clean breaks, issue with the scaling since we had to stop at 12000, so it was force to stop al 12000
-x_max <- max(ceiling(max(data_filtered$price, na.rm = TRUE) / 200) * 200, 12000)
+------------------------------------------------------------------------
 
-# Plot
-ggplot(data_filtered, aes(x = period_id, y = price, color = website)) +
-  geom_line(size = 0.9) +
-  scale_color_manual(values = c(
-    "A" = "black",
-    "B" = "#98bf64",
-    "C" = "darkblue",
-    "D" = "brown",
-    "E" = "#DAA520"
-  )) +
-  #scale
-  scale_x_continuous(
-    limits = c(0, x_max),
-    breaks = seq(0, x_max, by = 2400)
-  ) +
-  labs(
-    title = "Panel A. Xyzal, tablets, 80 count",
-    x = "Hours Elapsed in Sample",
-    y = "Price",
-    color = "Retailer"
-  ) +
-  theme_minimal(base_size = 14) +
-  theme(
-    legend.position = "bottom",
-    legend.title = element_blank(),
-    legend.background = element_rect(fill = "white", color = "gray80", size = 0.4),
-    legend.box.background = element_rect(color = "gray60"),
-    legend.box.margin = margin(t = 5, r = 5, b = 5, l = 5)
-  )
-```
+## 📄 Downloadable Version ('pdf' and 'html')
+
+**pdf:**\
+[📥 Index PDF Version](index.pdf)\
+[📥 Presentation PDF Version](try.pdf)
+
+**html:**\
+[📥 Index PDF Version](index.html)\
+[📥 Presentation PDF Version](try.html)
+
+------------------------------------------------------------------------
+
+## ✅ Next Steps
+
+-   Expand replication to additional tables\
+-   Align replication figures tables to those in the paper\
+-   Fix replication issues\
+-   Create an academic-style appendix
+
