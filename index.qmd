@@ -83,7 +83,7 @@ View the full repository here:\
 ## 🎥 View the Presentation
 Click on the presentation you want to view:\
 👉 [Christian](try.html)\
-👉 [Tony](https://rpubs.com/nanaosei95/1317786)
+👉 [Tony](https://nanaosei95.github.io/replicapresentation)
 
 ------------------------------------------------------------------------
 

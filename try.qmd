@@ -447,7 +447,7 @@ final_stats_rounded %>%
 \
 \
 👉 [Go Back to Index](index.html)\
-👉 [Next Presentation: Tony](https://rpubs.com/nanaosei95/1317786)
+👉 [Next Presentation: Tony](https://nanaosei95.github.io/replicapresentation)
 
 ## References
 
