@@ -15,14 +15,14 @@ editor: visual
 ::: {.smaller}
 At the start of our project, we considered two potential papers:\
 
-**1.** ***A Reputational Theory of Firm Dynamics*** (@Board2022Firm)\
-**2.** ***Artificial intelligence, algorithmic pricing, and collusion*** (@calvano2020pricing)\
+**1.** ***A Reputational Theory of Firm Dynamics*** [@Board2022Firm]\
+**2.** ***Artificial intelligence, algorithmic pricing, and collusion*** [@Brown2023]\
 
 ![Consumers Observe Firms’ Investment](images/Figure1PaperA.png){#fig-1 fig-align="center" width=50%}
 
 The first paper appeared relatively straightforward, with simple graphs that seemed easy to replicate (see @fig-1 from @Board2022Firm). This made it an attractive choice initially.\
 
-However, after reviewing the replication package for the second paper (@calvano2020pricing)—described in the ***README*** file ([📥Open](README Paper.pdf)), we noticed that, despite its complexity, it offered some compelling advantages.
+However, after reviewing the replication package for the second paper (@Brown2023)—described in the ***README*** file ([📥Open](README Paper.pdf)), we noticed that, despite its complexity, it offered some compelling advantages.
 :::
 ## 
 ::: {.smaller}
@@ -48,12 +48,12 @@ Throughout our journey, we encountered several challenges, which we can summariz
 
 **4.** Handling R crashes—there were moments when R would freeze or become unresponsive; using Ctrl+C proved useful to "unstuck" it.\
 
-**5.** Fine-tuning visualizations—adjusting scaling, colors, and layout to match the presentation style in @calvano2020pricing, while ensuring the underlying data aligned correctly.\
+**5.** Fine-tuning visualizations—adjusting scaling, colors, and layout to match the presentation style in @Brown2023, while ensuring the underlying data aligned correctly.\
 :::
 
 ## Graph Replication
 ::: {.smaller}
-For our first replication, we used the data source ***analysis_data.dta*** and followed the script ***07_summary_stats.do*** ([📥Open](07_summary_stats.do))  to reproduce ***Figure 1: Example Time Series of Prices for Identical Products across Retailers***, found on page 118 of @calvano2020pricing.
+For our first replication, we used the data source ***analysis_data.dta*** and followed the script ***07_summary_stats.do*** ([📥Open](07_summary_stats.do))  to reproduce ***Figure 1: Example Time Series of Prices for Identical Products across Retailers***, found on page 118 of @Brown2023.
 :::
 
 ```{r}
@@ -121,7 +121,7 @@ p1 + p2 + plot_layout(ncol = 2)
 
 ## 
 ::: {.smaller}
-Original from ***The Effect of Gender on Credit Access*** (@calvano2020pricing):\
+Original from ***The Effect of Gender on Credit Access*** (@Brown2023):\
 
 ![Example Time Series of Prices for Identical Products across Retailers](images/F2PaperB.png){#fig-3 fig-align="center" width=55%}
 
@@ -194,7 +194,7 @@ p1 + p2 + plot_layout(ncol = 2)
 
 ## Table Replication
 ::: {.smaller}
-For our second replication, we followed the same logic as with the graph and used the data source ***analysis_data.dta*** and followed the script ***07_summary_stats.do*** ([📥Open](07_summary_stats.do))  to reproduce ***Table 1—Daily Statistics for Hourly Price Data***, found on page 117 of @calvano2020pricing.
+For our second replication, we followed the same logic as with the graph and used the data source ***analysis_data.dta*** and followed the script ***07_summary_stats.do*** ([📥Open](07_summary_stats.do))  to reproduce ***Table 1—Daily Statistics for Hourly Price Data***, found on page 117 of @Brown2023.
 
 We are currently facing the following key issues:
 :::
@@ -317,7 +317,7 @@ final_stats_rounded %>%
 
 ## 
 ::: {.smaller}
-Original from ***The Effect of Gender on Credit Access*** (@calvano2020pricing):\
+Original from ***The Effect of Gender on Credit Access*** (@Brown2023):\
 
 ![Example Time Series of Prices for Identical Products across Retailers](images/T2PaperB.png){#fig-4 fig-align="center" width=55%}
 

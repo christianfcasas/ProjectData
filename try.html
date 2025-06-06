@@ -217,8 +217,8 @@
 <div class="smaller">
 <p>At the start of our project, we considered two potential papers:<br>
 </p>
-<p><strong>1.</strong> <strong><em>A Reputational Theory of Firm Dynamics</em></strong> (<span class="citation" data-cites="Board2022Firm">Board &amp; Meyer-ter-Vehn (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>)<br>
-<strong>2.</strong> <strong><em>Artificial intelligence, algorithmic pricing, and collusion</em></strong> (<span class="citation" data-cites="calvano2020pricing">Calvano et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>)<br>
+<p><strong>1.</strong> <strong><em>A Reputational Theory of Firm Dynamics</em></strong> <span class="citation" data-cites="Board2022Firm">(<a href="#/references" role="doc-biblioref" onclick="">Board &amp; Meyer-ter-Vehn, 2022</a>)</span><br>
+<strong>2.</strong> <strong><em>Artificial intelligence, algorithmic pricing, and collusion</em></strong> <span class="citation" data-cites="Brown2023">(<a href="#/references" role="doc-biblioref" onclick="">Brown &amp; MacKay, 2023</a>)</span><br>
 </p>
 <div id="fig-1" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig">
@@ -232,7 +232,7 @@ Figure&nbsp;1: Consumers Observe Firms’ Investment
 </div>
 <p>The first paper appeared relatively straightforward, with simple graphs that seemed easy to replicate (see <a href="#/fig-1" class="quarto-xref">Figure&nbsp;1</a> from <span class="citation" data-cites="Board2022Firm">Board &amp; Meyer-ter-Vehn (<a href="#/references" role="doc-biblioref" onclick="">2022</a>)</span>). This made it an attractive choice initially.<br>
 </p>
-<p>However, after reviewing the replication package for the second paper (<span class="citation" data-cites="calvano2020pricing">Calvano et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>)—described in the <strong><em>README</em></strong> file (<a href="README%20Paper.pdf">📥Open</a>), we noticed that, despite its complexity, it offered some compelling advantages.</p>
+<p>However, after reviewing the replication package for the second paper (<span class="citation" data-cites="Brown2023">Brown &amp; MacKay (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span>)—described in the <strong><em>README</em></strong> file (<a href="README%20Paper.pdf">📥Open</a>), we noticed that, despite its complexity, it offered some compelling advantages.</p>
 </div>
 </section>
 <section id="section" class="slide level2">
@@ -269,14 +269,14 @@ Throughout our journey, we encountered several challenges, which we can summariz
 </p>
 <p><strong>4.</strong> Handling R crashes—there were moments when R would freeze or become unresponsive; using Ctrl+C proved useful to “unstuck” it.<br>
 </p>
-<p><strong>5.</strong> Fine-tuning visualizations—adjusting scaling, colors, and layout to match the presentation style in <span class="citation" data-cites="calvano2020pricing">Calvano et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>, while ensuring the underlying data aligned correctly.<br>
+<p><strong>5.</strong> Fine-tuning visualizations—adjusting scaling, colors, and layout to match the presentation style in <span class="citation" data-cites="Brown2023">Brown &amp; MacKay (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span>, while ensuring the underlying data aligned correctly.<br>
 </p>
 </div>
 </section>
 <section id="graph-replication" class="slide level2">
 <h2>Graph Replication</h2>
 <div class="smaller">
-<p>For our first replication, we used the data source <strong><em>analysis_data.dta</em></strong> and followed the script <strong><em>07_summary_stats.do</em></strong> (<a href="07_summary_stats.do">📥Open</a>) to reproduce <strong><em>Figure 1: Example Time Series of Prices for Identical Products across Retailers</em></strong>, found on page 118 of <span class="citation" data-cites="calvano2020pricing">Calvano et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>.</p>
+<p>For our first replication, we used the data source <strong><em>analysis_data.dta</em></strong> and followed the script <strong><em>07_summary_stats.do</em></strong> (<a href="07_summary_stats.do">📥Open</a>) to reproduce <strong><em>Figure 1: Example Time Series of Prices for Identical Products across Retailers</em></strong>, found on page 118 of <span class="citation" data-cites="Brown2023">Brown &amp; MacKay (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span>.</p>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(haven)</span>
@@ -341,7 +341,7 @@ Throughout our journey, we encountered several challenges, which we can summariz
 <section id="section-1" class="slide level2">
 <h2></h2>
 <div class="smaller">
-<p>Original from <strong><em>The Effect of Gender on Credit Access</em></strong> (<span class="citation" data-cites="calvano2020pricing">Calvano et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>):<br>
+<p>Original from <strong><em>The Effect of Gender on Credit Access</em></strong> (<span class="citation" data-cites="Brown2023">Brown &amp; MacKay (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span>):<br>
 </p>
 <div id="fig-3" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig">
@@ -368,7 +368,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
 <section id="table-replication" class="slide level2">
 <h2>Table Replication</h2>
 <div class="smaller">
-<p>For our second replication, we followed the same logic as with the graph and used the data source <strong><em>analysis_data.dta</em></strong> and followed the script <strong><em>07_summary_stats.do</em></strong> (<a href="07_summary_stats.do">📥Open</a>) to reproduce <strong><em>Table 1—Daily Statistics for Hourly Price Data</em></strong>, found on page 117 of <span class="citation" data-cites="calvano2020pricing">Calvano et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>.</p>
+<p>For our second replication, we followed the same logic as with the graph and used the data source <strong><em>analysis_data.dta</em></strong> and followed the script <strong><em>07_summary_stats.do</em></strong> (<a href="07_summary_stats.do">📥Open</a>) to reproduce <strong><em>Table 1—Daily Statistics for Hourly Price Data</em></strong>, found on page 117 of <span class="citation" data-cites="Brown2023">Brown &amp; MacKay (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span>.</p>
 <p>We are currently facing the following key issues:</p>
 </div>
 <div class="cell">
@@ -481,23 +481,23 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
 <span id="cb2-107"><a href=""></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb2-108"><a href=""></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Table 1 — Daily Statistics for Hourly Price Data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="vdbtjyblrt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vdbtjyblrt table {
+<div id="eflfxmfkje" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eflfxmfkje table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vdbtjyblrt thead, #vdbtjyblrt tbody, #vdbtjyblrt tfoot, #vdbtjyblrt tr, #vdbtjyblrt td, #vdbtjyblrt th {
+#eflfxmfkje thead, #eflfxmfkje tbody, #eflfxmfkje tfoot, #eflfxmfkje tr, #eflfxmfkje td, #eflfxmfkje th {
   border-style: none;
 }
 
-#vdbtjyblrt p {
+#eflfxmfkje p {
   margin: 0;
   padding: 0;
 }
 
-#vdbtjyblrt .gt_table {
+#eflfxmfkje .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -523,12 +523,12 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   border-left-color: #D3D3D3;
 }
 
-#vdbtjyblrt .gt_caption {
+#eflfxmfkje .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vdbtjyblrt .gt_title {
+#eflfxmfkje .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -540,7 +540,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   border-bottom-width: 0;
 }
 
-#vdbtjyblrt .gt_subtitle {
+#eflfxmfkje .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -552,7 +552,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   border-top-width: 0;
 }
 
-#vdbtjyblrt .gt_heading {
+#eflfxmfkje .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -564,13 +564,13 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   border-right-color: #D3D3D3;
 }
 
-#vdbtjyblrt .gt_bottom_border {
+#eflfxmfkje .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vdbtjyblrt .gt_col_headings {
+#eflfxmfkje .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -585,7 +585,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   border-right-color: #D3D3D3;
 }
 
-#vdbtjyblrt .gt_col_heading {
+#eflfxmfkje .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -605,7 +605,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   overflow-x: hidden;
 }
 
-#vdbtjyblrt .gt_column_spanner_outer {
+#eflfxmfkje .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -617,15 +617,15 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   padding-right: 4px;
 }
 
-#vdbtjyblrt .gt_column_spanner_outer:first-child {
+#eflfxmfkje .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vdbtjyblrt .gt_column_spanner_outer:last-child {
+#eflfxmfkje .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vdbtjyblrt .gt_column_spanner {
+#eflfxmfkje .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -637,11 +637,11 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   width: 100%;
 }
 
-#vdbtjyblrt .gt_spanner_row {
+#eflfxmfkje .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vdbtjyblrt .gt_group_heading {
+#eflfxmfkje .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -667,7 +667,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   text-align: left;
 }
 
-#vdbtjyblrt .gt_empty_group_heading {
+#eflfxmfkje .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -682,15 +682,15 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   vertical-align: middle;
 }
 
-#vdbtjyblrt .gt_from_md > :first-child {
+#eflfxmfkje .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vdbtjyblrt .gt_from_md > :last-child {
+#eflfxmfkje .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vdbtjyblrt .gt_row {
+#eflfxmfkje .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -709,7 +709,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   overflow-x: hidden;
 }
 
-#vdbtjyblrt .gt_stub {
+#eflfxmfkje .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -722,7 +722,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   padding-right: 5px;
 }
 
-#vdbtjyblrt .gt_stub_row_group {
+#eflfxmfkje .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -736,15 +736,15 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   vertical-align: top;
 }
 
-#vdbtjyblrt .gt_row_group_first td {
+#eflfxmfkje .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vdbtjyblrt .gt_row_group_first th {
+#eflfxmfkje .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vdbtjyblrt .gt_summary_row {
+#eflfxmfkje .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -754,16 +754,16 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   padding-right: 5px;
 }
 
-#vdbtjyblrt .gt_first_summary_row {
+#eflfxmfkje .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vdbtjyblrt .gt_first_summary_row.thick {
+#eflfxmfkje .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vdbtjyblrt .gt_last_summary_row {
+#eflfxmfkje .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -773,7 +773,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   border-bottom-color: #D3D3D3;
 }
 
-#vdbtjyblrt .gt_grand_summary_row {
+#eflfxmfkje .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -783,7 +783,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   padding-right: 5px;
 }
 
-#vdbtjyblrt .gt_first_grand_summary_row {
+#eflfxmfkje .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -793,7 +793,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   border-top-color: #D3D3D3;
 }
 
-#vdbtjyblrt .gt_last_grand_summary_row_top {
+#eflfxmfkje .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -803,11 +803,11 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   border-bottom-color: #D3D3D3;
 }
 
-#vdbtjyblrt .gt_striped {
+#eflfxmfkje .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vdbtjyblrt .gt_table_body {
+#eflfxmfkje .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -816,7 +816,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   border-bottom-color: #D3D3D3;
 }
 
-#vdbtjyblrt .gt_footnotes {
+#eflfxmfkje .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -830,7 +830,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   border-right-color: #D3D3D3;
 }
 
-#vdbtjyblrt .gt_footnote {
+#eflfxmfkje .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -839,7 +839,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   padding-right: 5px;
 }
 
-#vdbtjyblrt .gt_sourcenotes {
+#eflfxmfkje .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -853,7 +853,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   border-right-color: #D3D3D3;
 }
 
-#vdbtjyblrt .gt_sourcenote {
+#eflfxmfkje .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -861,72 +861,72 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
   padding-right: 5px;
 }
 
-#vdbtjyblrt .gt_left {
+#eflfxmfkje .gt_left {
   text-align: left;
 }
 
-#vdbtjyblrt .gt_center {
+#eflfxmfkje .gt_center {
   text-align: center;
 }
 
-#vdbtjyblrt .gt_right {
+#eflfxmfkje .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vdbtjyblrt .gt_font_normal {
+#eflfxmfkje .gt_font_normal {
   font-weight: normal;
 }
 
-#vdbtjyblrt .gt_font_bold {
+#eflfxmfkje .gt_font_bold {
   font-weight: bold;
 }
 
-#vdbtjyblrt .gt_font_italic {
+#eflfxmfkje .gt_font_italic {
   font-style: italic;
 }
 
-#vdbtjyblrt .gt_super {
+#eflfxmfkje .gt_super {
   font-size: 65%;
 }
 
-#vdbtjyblrt .gt_footnote_marks {
+#eflfxmfkje .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vdbtjyblrt .gt_asterisk {
+#eflfxmfkje .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vdbtjyblrt .gt_indent_1 {
+#eflfxmfkje .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vdbtjyblrt .gt_indent_2 {
+#eflfxmfkje .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vdbtjyblrt .gt_indent_3 {
+#eflfxmfkje .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vdbtjyblrt .gt_indent_4 {
+#eflfxmfkje .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vdbtjyblrt .gt_indent_5 {
+#eflfxmfkje .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vdbtjyblrt .katex-display {
+#eflfxmfkje .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vdbtjyblrt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#eflfxmfkje div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1029,7 +1029,7 @@ Figure&nbsp;3: Example Time Series of Prices for Identical Products across Retai
 <section id="section-2" class="slide level2">
 <h2></h2>
 <div class="smaller">
-<p>Original from <strong><em>The Effect of Gender on Credit Access</em></strong> (<span class="citation" data-cites="calvano2020pricing">Calvano et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>):<br>
+<p>Original from <strong><em>The Effect of Gender on Credit Access</em></strong> (<span class="citation" data-cites="Brown2023">Brown &amp; MacKay (<a href="#/references" role="doc-biblioref" onclick="">2023</a>)</span>):<br>
 </p>
 <div id="fig-4" class="quarto-float quarto-figure quarto-figure-center" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig">
@@ -1044,23 +1044,23 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
 <p><strong>Replication:</strong></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="escfjodrwx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#escfjodrwx table {
+<div id="kfvlnjhxbn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kfvlnjhxbn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#escfjodrwx thead, #escfjodrwx tbody, #escfjodrwx tfoot, #escfjodrwx tr, #escfjodrwx td, #escfjodrwx th {
+#kfvlnjhxbn thead, #kfvlnjhxbn tbody, #kfvlnjhxbn tfoot, #kfvlnjhxbn tr, #kfvlnjhxbn td, #kfvlnjhxbn th {
   border-style: none;
 }
 
-#escfjodrwx p {
+#kfvlnjhxbn p {
   margin: 0;
   padding: 0;
 }
 
-#escfjodrwx .gt_table {
+#kfvlnjhxbn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1086,12 +1086,12 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   border-left-color: #D3D3D3;
 }
 
-#escfjodrwx .gt_caption {
+#kfvlnjhxbn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#escfjodrwx .gt_title {
+#kfvlnjhxbn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1103,7 +1103,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   border-bottom-width: 0;
 }
 
-#escfjodrwx .gt_subtitle {
+#kfvlnjhxbn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1115,7 +1115,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   border-top-width: 0;
 }
 
-#escfjodrwx .gt_heading {
+#kfvlnjhxbn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1127,13 +1127,13 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   border-right-color: #D3D3D3;
 }
 
-#escfjodrwx .gt_bottom_border {
+#kfvlnjhxbn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#escfjodrwx .gt_col_headings {
+#kfvlnjhxbn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1148,7 +1148,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   border-right-color: #D3D3D3;
 }
 
-#escfjodrwx .gt_col_heading {
+#kfvlnjhxbn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1168,7 +1168,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   overflow-x: hidden;
 }
 
-#escfjodrwx .gt_column_spanner_outer {
+#kfvlnjhxbn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1180,15 +1180,15 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   padding-right: 4px;
 }
 
-#escfjodrwx .gt_column_spanner_outer:first-child {
+#kfvlnjhxbn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#escfjodrwx .gt_column_spanner_outer:last-child {
+#kfvlnjhxbn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#escfjodrwx .gt_column_spanner {
+#kfvlnjhxbn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1200,11 +1200,11 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   width: 100%;
 }
 
-#escfjodrwx .gt_spanner_row {
+#kfvlnjhxbn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#escfjodrwx .gt_group_heading {
+#kfvlnjhxbn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1230,7 +1230,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   text-align: left;
 }
 
-#escfjodrwx .gt_empty_group_heading {
+#kfvlnjhxbn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1245,15 +1245,15 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   vertical-align: middle;
 }
 
-#escfjodrwx .gt_from_md > :first-child {
+#kfvlnjhxbn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#escfjodrwx .gt_from_md > :last-child {
+#kfvlnjhxbn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#escfjodrwx .gt_row {
+#kfvlnjhxbn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1272,7 +1272,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   overflow-x: hidden;
 }
 
-#escfjodrwx .gt_stub {
+#kfvlnjhxbn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1285,7 +1285,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   padding-right: 5px;
 }
 
-#escfjodrwx .gt_stub_row_group {
+#kfvlnjhxbn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1299,15 +1299,15 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   vertical-align: top;
 }
 
-#escfjodrwx .gt_row_group_first td {
+#kfvlnjhxbn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#escfjodrwx .gt_row_group_first th {
+#kfvlnjhxbn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#escfjodrwx .gt_summary_row {
+#kfvlnjhxbn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1317,16 +1317,16 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   padding-right: 5px;
 }
 
-#escfjodrwx .gt_first_summary_row {
+#kfvlnjhxbn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#escfjodrwx .gt_first_summary_row.thick {
+#kfvlnjhxbn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#escfjodrwx .gt_last_summary_row {
+#kfvlnjhxbn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1336,7 +1336,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   border-bottom-color: #D3D3D3;
 }
 
-#escfjodrwx .gt_grand_summary_row {
+#kfvlnjhxbn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1346,7 +1346,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   padding-right: 5px;
 }
 
-#escfjodrwx .gt_first_grand_summary_row {
+#kfvlnjhxbn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1356,7 +1356,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   border-top-color: #D3D3D3;
 }
 
-#escfjodrwx .gt_last_grand_summary_row_top {
+#kfvlnjhxbn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1366,11 +1366,11 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   border-bottom-color: #D3D3D3;
 }
 
-#escfjodrwx .gt_striped {
+#kfvlnjhxbn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#escfjodrwx .gt_table_body {
+#kfvlnjhxbn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1379,7 +1379,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   border-bottom-color: #D3D3D3;
 }
 
-#escfjodrwx .gt_footnotes {
+#kfvlnjhxbn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1393,7 +1393,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   border-right-color: #D3D3D3;
 }
 
-#escfjodrwx .gt_footnote {
+#kfvlnjhxbn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1402,7 +1402,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   padding-right: 5px;
 }
 
-#escfjodrwx .gt_sourcenotes {
+#kfvlnjhxbn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1416,7 +1416,7 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   border-right-color: #D3D3D3;
 }
 
-#escfjodrwx .gt_sourcenote {
+#kfvlnjhxbn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1424,72 +1424,72 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
   padding-right: 5px;
 }
 
-#escfjodrwx .gt_left {
+#kfvlnjhxbn .gt_left {
   text-align: left;
 }
 
-#escfjodrwx .gt_center {
+#kfvlnjhxbn .gt_center {
   text-align: center;
 }
 
-#escfjodrwx .gt_right {
+#kfvlnjhxbn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#escfjodrwx .gt_font_normal {
+#kfvlnjhxbn .gt_font_normal {
   font-weight: normal;
 }
 
-#escfjodrwx .gt_font_bold {
+#kfvlnjhxbn .gt_font_bold {
   font-weight: bold;
 }
 
-#escfjodrwx .gt_font_italic {
+#kfvlnjhxbn .gt_font_italic {
   font-style: italic;
 }
 
-#escfjodrwx .gt_super {
+#kfvlnjhxbn .gt_super {
   font-size: 65%;
 }
 
-#escfjodrwx .gt_footnote_marks {
+#kfvlnjhxbn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#escfjodrwx .gt_asterisk {
+#kfvlnjhxbn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#escfjodrwx .gt_indent_1 {
+#kfvlnjhxbn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#escfjodrwx .gt_indent_2 {
+#kfvlnjhxbn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#escfjodrwx .gt_indent_3 {
+#kfvlnjhxbn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#escfjodrwx .gt_indent_4 {
+#kfvlnjhxbn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#escfjodrwx .gt_indent_5 {
+#kfvlnjhxbn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#escfjodrwx .katex-display {
+#kfvlnjhxbn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#escfjodrwx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#kfvlnjhxbn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1607,8 +1607,8 @@ Figure&nbsp;4: Example Time Series of Prices for Identical Products across Retai
 <div id="ref-Board2022Firm" class="csl-entry" role="listitem">
 Board, S., &amp; Meyer-ter-Vehn, M. (2022). A reputational theory of firm dynamics. <em>American Economic Journal: Microeconomics</em>, <em>14</em>(2), 44–80. <a href="https://doi.org/10.1257/mic.20190376">https://doi.org/10.1257/mic.20190376</a>
 </div>
-<div id="ref-calvano2020pricing" class="csl-entry" role="listitem">
-Calvano, E., Calzolari, G., Denicolò, V., &amp; Pastorello, S. (2020). Artificial intelligence, algorithmic pricing, and collusion. <em>American Economic Review</em>, <em>110</em>(10), 3267–3297. <a href="https://doi.org/10.1257/mic.20210158">https://doi.org/10.1257/mic.20210158</a>
+<div id="ref-Brown2023" class="csl-entry" role="listitem">
+Brown, Z. Y., &amp; MacKay, A. (2023). Competition in pricing algorithms. <em>American Economic Journal: Microeconomics</em>, <em>15</em>(2), 109–156. <a href="https://doi.org/10.1257/mic.20210158">https://doi.org/10.1257/mic.20210158</a>
 </div>
 </div>
 </section>

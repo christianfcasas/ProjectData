@@ -1,28 +1,25 @@
 ---
 title: "Data Science for Business - Replication Project"
-author: "Tony Osei, Christian F. R. Casas"
-date: "06/06/2025"
+author:
+  - name: Tony Osei - Christian Casas
+    affiliations:
+      name: Hochschule Fresenius
+      city: Cologne
+      country: Germany
+    email: cfc@gmail.com
+    corresponding: true
+
 format:
   html:
     theme: cosmo
     page-layout: full
     toc: false
     css: styles.css
-  apaquarto-docx: 
-    toc: false
-  apaquarto-html: 
-    toc: true
-  apaquarto-typst: 
-    keep-typ: true
-    list-of-figures: false
-    list-of-tables: false
-    toc: false
-    papersize: "us-letter"
   apaquarto-pdf:
     documentmode: man
     keep-tex: true
-    pdf-engine: pdflatex
-    documentclass: article
+    pdf-engine: xelatex
+    documentclass: apa7
     theme: Madrid
     fontsize: 11pt
     slide-level: 2
@@ -36,7 +33,7 @@ editor: visual
 
 ## 🔍 About This Project
 
-This is part of a research exercise for replicating graphs and tables from [@calvano2020pricing] using **R** and **Quarto**.
+This is part of a research exercise for replicating graphs and tables from [@Brown2023] using **R** and **Quarto**.
 
 We focus on:
 
@@ -48,7 +45,7 @@ We focus on:
 
 # 🎯 Research Replication
 
-We aim to replicate tables and charts taken from the paper ***The Effect of Gender on Credit Access*** (@calvano2020pricing), that was Published in *American Economic Review: Microeconomics*\
+We aim to replicate tables and charts taken from the paper ***Competition in Pricing Algorithms*** [@Brown2023], that was Published in *American Economic Review: Microeconomics*\
 
 Please follow the next link to find the replication package and further information:\
 **DOI:** [10.1257/mic.20210158](https://doi.org/10.1257/mic.20210158)
@@ -65,7 +62,7 @@ Please follow the next link to find the replication package and further informat
 
 -**haven:**: this library created by @haven1 allows R to read and write data files from statistical software like Stata, SPSS, and SAS.\
 
--**dplyr:** provides a grammar of data manipulation, making it easy to filter, select, summarize, and transform data frames. (@dplyr)\
+-**dplyr:** @dplyr provides a grammar of data manipulation, making it easy to filter, select, summarize, and transform data frames.\
 
 \-**ggplot:** As stated by @ggplot2 powerful and flexible system for creating static data visualizations using the grammar of graphics.\
 
@@ -77,6 +74,11 @@ Please follow the next link to find the replication package and further informat
 
 View the full repository here:\
 [🔗 github.com/christianfcasas/ProjectData](https://github.com/christianfcasas/ProjectData)
+\
+\
+Tony's Repositories:\
+- [🔗 Code and Replication](https://github.com/Nanaosei95/Replica.git)
+- [🔗 Presentation](https://github.com/Nanaosei95/replicapresentation.git)
 
 ------------------------------------------------------------------------
 
