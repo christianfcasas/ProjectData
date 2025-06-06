@@ -11,32 +11,36 @@ bibliography: references.bib
 csl: apa.csl
 editor: visual
 ---
+
 ## Choosing a Paper
-::: {.smaller}
+
+::: smaller
 At the start of our project, we considered two potential papers:\
 
 **1.** ***A Reputational Theory of Firm Dynamics*** [@Board2022Firm]\
-**2.** ***Artificial intelligence, algorithmic pricing, and collusion*** [@Brown2023]\
+**2.** ***Competition in Pricing Algorithms*** [@Brown2023]\
 
-![Consumers Observe Firms’ Investment](images/Figure1PaperA.png){#fig-1 fig-align="center" width=50%}
+![Consumers Observe Firms’ Investment](images/Figure1PaperA.png){#fig-1 fig-align="center" width="50%"}
 
 The first paper appeared relatively straightforward, with simple graphs that seemed easy to replicate (see @fig-1 from @Board2022Firm). This made it an attractive choice initially.\
 
-However, after reviewing the replication package for the second paper (@Brown2023)—described in the ***README*** file ([📥Open](README Paper.pdf)), we noticed that, despite its complexity, it offered some compelling advantages.
+However, after reviewing the replication package for the second paper (@Brown2023)—described in the ***README*** file ([📥Open](README%20Paper.pdf)), we noticed that, despite its complexity, it offered some compelling advantages.
 :::
+
 ## 
-::: {.smaller}
+
+::: smaller
 The package also includes multiple well-documented Stata scripts, such as ***07_summary_stats.do*** ([📥Open](07_summary_stats.do)), which are used to generate the tables and figures in the paper. Initially, we found the concepts in this paper quite complex and the graphs and tables (see @fig-2 and @fig-3 ) more challenging to replicate.\
 Additionally, we discovered that the first paper used **simulated data**, which reduced its appeal for our goals.\
 
-![Price Differences for Identical Products Relative to Retailer A](images/T1PaperB.png){#fig-2 fig-align="center" width=50%}
+![Price Differences for Identical Products Relative to Retailer A](images/T1PaperB.png){#fig-2 fig-align="center" width="50%"}
 
-Ultimately, we chose to proceed with our "Plan B": the Calvano et al. paper. Despite its complexity, it uses real, proprietary data and provides a thoroughly organized and transparent replication package—factors that aligned better with our objectives and offered a more enriching learning experience.\
-
+Ultimately, we chose to proceed with our "Plan B": ***Competition in Pricing Algorithms*** [@Brown2023]. Despite its complexity, it uses real, proprietary data and provides a thoroughly organized and transparent replication package—factors that aligned better with our objectives and offered a more enriching learning experience.\
 :::
 
 ## Issues when coding
-::: {.smaller}
+
+::: smaller
 \
 Throughout our journey, we encountered several challenges, which we can summarize as follows:\
 \
@@ -52,8 +56,9 @@ Throughout our journey, we encountered several challenges, which we can summariz
 :::
 
 ## Graph Replication
-::: {.smaller}
-For our first replication, we used the data source ***analysis_data.dta*** and followed the script ***07_summary_stats.do*** ([📥Open](07_summary_stats.do))  to reproduce ***Figure 1: Example Time Series of Prices for Identical Products across Retailers***, found on page 118 of @Brown2023.
+
+::: smaller
+For our first replication, we used the data source ***analysis_data.dta*** and followed the script ***07_summary_stats.do*** ([📥Open](07_summary_stats.do)) to reproduce ***Figure 1: Example Time Series of Prices for Identical Products across Retailers***, found on page 118 of @Brown2023.
 :::
 
 ```{r}
@@ -120,12 +125,14 @@ p1 + p2 + plot_layout(ncol = 2)
 ```
 
 ## 
-::: {.smaller}
-Original from ***The Effect of Gender on Credit Access*** (@Brown2023):\
 
-![Example Time Series of Prices for Identical Products across Retailers](images/F2PaperB.png){#fig-3 fig-align="center" width=55%}
+::: smaller
+Original from ***Competition in Pricing Algorithms*** (@Brown2023):\
+
+![Example Time Series of Prices for Identical Products across Retailers](images/F2PaperB.png){#fig-3 fig-align="center" width="55%"}
 
 **Replication:**
+
 ```{r}
 #| label: Code3
 #| echo: false
@@ -193,8 +200,9 @@ p1 + p2 + plot_layout(ncol = 2)
 :::
 
 ## Table Replication
-::: {.smaller}
-For our second replication, we followed the same logic as with the graph and used the data source ***analysis_data.dta*** and followed the script ***07_summary_stats.do*** ([📥Open](07_summary_stats.do))  to reproduce ***Table 1—Daily Statistics for Hourly Price Data***, found on page 117 of @Brown2023.
+
+::: smaller
+For our second replication, we followed the same logic as with the graph and used the data source ***analysis_data.dta*** and followed the script ***07_summary_stats.do*** ([📥Open](07_summary_stats.do)) to reproduce ***Table 1—Daily Statistics for Hourly Price Data***, found on page 117 of @Brown2023.
 
 We are currently facing the following key issues:
 :::
@@ -316,12 +324,14 @@ final_stats_rounded %>%
 ```
 
 ## 
-::: {.smaller}
-Original from ***The Effect of Gender on Credit Access*** (@Brown2023):\
 
-![Example Time Series of Prices for Identical Products across Retailers](images/T2PaperB.png){#fig-4 fig-align="center" width=55%}
+::: smaller
+Original from ***Competition in Pricing Algorithms*** (@Brown2023):\
+
+![Example Time Series of Prices for Identical Products across Retailers](images/T2PaperB.png){#fig-4 fig-align="center" width="55%"}
 
 **Replication:**
+
 ```{r}
 #| label: Code6
 #| echo: false
@@ -440,7 +450,9 @@ final_stats_rounded %>%
 
 ```
 :::
+
 ## 
+
 \
 \
 \
@@ -450,4 +462,3 @@ final_stats_rounded %>%
 👉 [Next Presentation: Tony](https://nanaosei95.github.io/replicapresentation)
 
 ## References
-
