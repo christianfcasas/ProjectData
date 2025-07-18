@@ -33,11 +33,11 @@ editor: visual
 
 # 🎯 Research Replication
 
-We aim to replicate tables and charts taken from the paper ***Competition in Pricing Algorithms*** [@Brown2023], that was Published in *American Economic Review: Microeconomics*\
+We aim to replicate tables and charts taken from the paper ***Competition in Pricing Algorithms*** [@Brown2023], that was Published in *American Economic Review: Microeconomics.*\
 
 Please follow the next link to find the replication package and further information:\
-**DOI:** [10.1257/mic.20210158](https://doi.org/10.1257/mic.20210158)
-**Replication Package** [Open Here](https://www.openicpsr.org/openicpsr/project/151303/version/V1/view)
+**DOI:** [10.1257/mic.20210158](https://doi.org/10.1257/mic.20210158).\
+**Replication Package** [Open Here](https://www.openicpsr.org/openicpsr/project/151303/version/V1/view).
 
 ------------------------------------------------------------------------
 
