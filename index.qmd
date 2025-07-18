@@ -37,12 +37,13 @@ We aim to replicate tables and charts taken from the paper ***Competition in Pri
 
 Please follow the next link to find the replication package and further information:\
 **DOI:** [10.1257/mic.20210158](https://doi.org/10.1257/mic.20210158)
+**Replication Package** [Open Here](https://www.openicpsr.org/openicpsr/project/151303/version/V1/view)
 
 ------------------------------------------------------------------------
 
-## 🎥 View Our Hand Out Documents
+## 🎥 View Our Handout Documents
 
-Click on the presentation you want to view:\
+Click on the handout document you want to review:\
 👉 **Christian's Handout:** [Report.html](Report.html), [Report.pdf](Report.pdf), [Report.qmd](Report.qmd)\
 👉 [Tony](https://nanaosei95.github.io/replicapresentation)
 
