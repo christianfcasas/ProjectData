@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tony Osei - Christian Casas">
+<meta name="author" content="Christian F. Rodríguez Casas">
 
-<title>Data Science for Business - Replication Project</title>
+<title>Replication Report — Brown &amp; MacKay (2023)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -44,16 +44,16 @@ div.csl-indent {
 }</style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-32162a2fca7cb0439643f2faaab1edf3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="Report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Report_files/libs/quarto-html/quarto.js"></script>
+<script src="Report_files/libs/quarto-html/popper.min.js"></script>
+<script src="Report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Report_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Report_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -61,34 +61,52 @@ div.csl-indent {
 
 <body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (apaquarto)</a></li></ul></div></div>
-<main class="content column-page-left" id="quarto-document-content">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation"><span class="header-section-number">2</span> 1. Motivation</a></li>
+  <li><a href="#selecting-a-paper-to-replicate" id="toc-selecting-a-paper-to-replicate" class="nav-link" data-scroll-target="#selecting-a-paper-to-replicate"><span class="header-section-number">3</span> 2. Selecting a Paper to Replicate</a></li>
+  <li><a href="#the-choice" id="toc-the-choice" class="nav-link" data-scroll-target="#the-choice"><span class="header-section-number">4</span> 3. The Choice</a></li>
+  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure"><span class="header-section-number">5</span> 4. Procedure</a></li>
+  <li><a href="#challenges-and-issues" id="toc-challenges-and-issues" class="nav-link" data-scroll-target="#challenges-and-issues"><span class="header-section-number">6</span> 5. Challenges and Issues</a></li>
+  <li><a href="#replication-process" id="toc-replication-process" class="nav-link" data-scroll-target="#replication-process"><span class="header-section-number">7</span> 6. Replication Process</a>
+  <ul class="collapse">
+  <li><a href="#tools-used" id="toc-tools-used" class="nav-link" data-scroll-target="#tools-used"><span class="header-section-number">7.1</span> Tools Used</a></li>
+  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><span class="header-section-number">7.2</span> Libraries</a></li>
+  <li><a href="#understanding-the-data-and-folder-structure" id="toc-understanding-the-data-and-folder-structure" class="nav-link" data-scroll-target="#understanding-the-data-and-folder-structure"><span class="header-section-number">7.3</span> Understanding the Data and Folder Structure</a></li>
+  <li><a href="#rebuilding-figures" id="toc-rebuilding-figures" class="nav-link" data-scroll-target="#rebuilding-figures"><span class="header-section-number">7.4</span> Rebuilding Figures</a></li>
+  <li><a href="#reproducing-tables" id="toc-reproducing-tables" class="nav-link" data-scroll-target="#reproducing-tables"><span class="header-section-number">7.5</span> Reproducing Tables</a></li>
+  <li><a href="#debugging" id="toc-debugging" class="nav-link" data-scroll-target="#debugging"><span class="header-section-number">7.6</span> Debugging</a></li>
+  </ul></li>
+  <li><a href="#remaining-issues-and-open-challenges" id="toc-remaining-issues-and-open-challenges" class="nav-link" data-scroll-target="#remaining-issues-and-open-challenges"><span class="header-section-number">8</span> 7. Remaining Issues and Open Challenges</a></li>
+  <li><a href="#what-wed-do-with-more-time" id="toc-what-wed-do-with-more-time" class="nav-link" data-scroll-target="#what-wed-do-with-more-time"><span class="header-section-number">9</span> 8. What We’d Do with More Time</a></li>
+  <li><a href="#reflections-on-the-process" id="toc-reflections-on-the-process" class="nav-link" data-scroll-target="#reflections-on-the-process"><span class="header-section-number">10</span> 9. Reflections on the Process</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Report.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Science for Business - Replication Project</h1>
+<h1 class="title">Replication Report — Brown &amp; MacKay (2023)</h1>
 </div>
 
 
-<div class="quarto-title-meta-author column-page-left">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-    <p class="author">Tony Osei - Christian Casas <a href="mailto:cfc@gmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+             <p>Christian F. Rodríguez Casas </p>
+          </div>
   </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Hochschule Fresenius
-          </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta column-page-left">
-
-      
+    
   
     
   </div>
@@ -98,85 +116,203 @@ div.csl-indent {
 </header>
 
 
-<hr>
-<section id="research-replication" class="level1">
-<h1>🎯 Research Replication</h1>
-<p>We aim to replicate tables and charts taken from the paper <strong><em>Competition in Pricing Algorithms</em></strong> <span class="citation" data-cites="Brown2023">(<a href="#ref-Brown2023" role="doc-biblioref">Brown and MacKay 2023</a>)</span>, that was Published in <em>American Economic Review: Microeconomics</em><br>
-</p>
-<p>Please follow the next link to find the replication package and further information:<br>
-<strong>DOI:</strong> <a href="https://doi.org/10.1257/mic.20210158">10.1257/mic.20210158</a></p>
-<hr>
-<section id="view-our-hand-out-documents" class="level2">
-<h2 class="anchored" data-anchor-id="view-our-hand-out-documents">🎥 View Our Hand Out Documents</h2>
-<p>Click on the presentation you want to view:<br>
-👉 <strong>Christian’s Handout:</strong> <a href="Report.html">Report.html</a>, <a href="Report.pdf">Report.pdf</a>, <a href="Report.qmd">Report.qmd</a><br>
-👉 <a href="https://nanaosei95.github.io/replicapresentation">Tony</a></p>
-<hr>
+<section id="abstract" class="level1 unnumbered">
+<h1 class="unnumbered">Abstract</h1>
+<p>The process required us to pay close attention to how the authors structured their simulation, modeled their data, and understood the market dynamics. While we successfully replicated most outputs, a few figures didn’t match exactly due to limitations in the replication data and differences in how certain functions behave in R compared to Stata.</p>
+<p>Beyond the technical challenges, the replication project helped us not only deepen our coding knowledge, but also to understand how algorithmic pricing influences competitive outcomes, especially the tension between learning and collusion. Furthermore, it gave us a clearer view of how to structure academic research with the aid of R, insight that will be valuable when writing our master’s thesis.</p>
+<p>The following sections walk through our workflow, key coding decisions, and the main insights we gathered throughout the process.</p>
 </section>
-<section id="view-the-presentation" class="level2">
-<h2 class="anchored" data-anchor-id="view-the-presentation">🎥 View the Presentation</h2>
-<p>Click on the presentation you want to view:<br>
-👉 <strong>Our Landing Page:</strong> <a href="index.html">index.html</a>, <a href="index.pdf">index.pdf</a>, <a href="index.qmd">index.qmd</a><br>
-👉 <strong>Christian’s Presentation:</strong> <a href="try.html">Presentation.html</a>, <a href="try.pdf">Presentation.pdf</a>, <a href="try.qmd">Presentation.qmd</a><br>
-👉 <a href="https://nanaosei95.github.io/replicapresentation">Tony</a></p>
-<hr>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>At first glance, replicating an academic paper might seem easy on the surface: choose a topic, pick a paper, review its graphs and tables, assess its difficulty, analyze its replication package, data sources, code, match the results, and publish. But in reality, it rarely works out that cleanly.</p>
+<p>This report offers a clear, transparent, and honest account of our attempt to replicate the paper <em>Competition in Pricing Algorithms</em> by <span class="citation" data-cites="Brown2023">Brown and MacKay (<a href="#ref-Brown2023" role="doc-biblioref">2023</a>)</span>, a study that explores how businesses that use AI-based pricing tools can unintentionally (or intentionally) reduce competition over time. In the authors’ words the study aims to:</p>
+<blockquote class="blockquote">
+<p>“illustrate how pricing algorithms can generate supracompetitive prices through novel, non-collusive mechanisms. Frequency, commitment, and asymmetry in pricing technology allow firms to support higher prices in competitive (Markov perfect) equilibrium”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><span class="citation" data-cites="Brown2023">(<a href="#ref-Brown2023" role="doc-biblioref">Brown and MacKay 2023, 2</a>)</span></p>
+</blockquote>
 </section>
-<section id="repository" class="level2">
-<h2 class="anchored" data-anchor-id="repository">📁 Repository</h2>
-<p>View the full repository here:<br>
-<a href="https://github.com/christianfcasas/ProjectData">🔗 github.com/christianfcasas/ProjectData</a><br>
-<br>
-Tony’s Repositories:<br>
-- <a href="https://github.com/Nanaosei95/Replica.git">🔗 Code and Replication</a> - <a href="https://github.com/Nanaosei95/replicapresentation.git">🔗 Presentation</a></p>
-<hr>
+<section id="motivation" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 1. Motivation</h1>
+<p>Our goal was to understand how we could replicate a paper from scratch using software, especially by reverse-engineering code written in a language we hadn’t seen before — Stata — and recreating it using R.</p>
+<p>We wanted to internalize the original authors’ decisions and replicate their analytical process with full transparency and logic in R.</p>
 </section>
-<section id="tools-used" class="level2">
-<h2 class="anchored" data-anchor-id="tools-used">🛠️ Tools Used</h2>
+<section id="selecting-a-paper-to-replicate" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> 2. Selecting a Paper to Replicate</h1>
+<p>We considered two options:</p>
+<ol type="1">
+<li><strong>A Reputational Theory of Firm Dynamics</strong> (Board &amp; Meyer-ter-Vehn, 2022)<br>
+</li>
+<li><strong>Competition in Pricing Algorithms</strong> (Brown &amp; MacKay, 2023)</li>
+</ol>
+<p>While the first paper seemed easier, we realized that it relied on simulations and had its own hidden complexities. The second paper looked more complex, but the authors provided a detailed README and clearly structured replication package, including <code>07_summary_stats.do</code>, which we found extremely helpful.</p>
+<p>Ultimately, we chose Brown &amp; MacKay’s paper due to the richness of the data and the detailed documentation.</p>
+</section>
+<section id="the-choice" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> 3. The Choice</h1>
+<p>The deciding factor wasn’t complexity, but substance. Brown &amp; MacKay’s work analyzes real pricing data and market behavior in a way that felt directly relevant.</p>
+<p>Despite early challenges (matching plot styles, interpreting Stata commands, crashes in R), we successfully replicated key outputs and learned the value of reproducible research and cross-language translation.</p>
+</section>
+<section id="procedure" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> 4. Procedure</h1>
+<p>We divided our project into phases:</p>
 <ul>
-<li><p><strong>R</strong> (data analysis &amp; visualization)<br>
-</p></li>
-<li><p><strong>Quarto</strong> (reproducible publishing)<br>
-</p></li>
-<li><p><strong>GitHub Pages</strong> (to share everything online)</p></li>
-<li><p><strong>Libraries</strong>:&nbsp;</p></li>
+<li>Understanding the paper<br>
+</li>
+<li>Dividing the work among team members<br>
+</li>
+<li>Studying the replication package and README<br>
+</li>
+<li>Analyzing <code>07_summary_stats.do</code><br>
+</li>
+<li>Translating Stata code to R<br>
+</li>
+<li>Rebuilding visualizations and summary statistics</li>
 </ul>
-<p>-<strong>haven:</strong>: this library created by <span class="citation" data-cites="haven1">Wickham, Miller, and Smith (<a href="#ref-haven1" role="doc-biblioref">2025</a>)</span> allows R to read and write data files from statistical software like Stata, SPSS, and SAS.<br>
-</p>
-<p>-<strong>dplyr:</strong> <span class="citation" data-cites="dplyr">Wickham et al. (<a href="#ref-dplyr" role="doc-biblioref">2025</a>)</span> provides a grammar of data manipulation, making it easy to filter, select, summarize, and transform data frames.<br>
-</p>
-<p>-<strong>ggplot:</strong> As stated by <span class="citation" data-cites="ggplot2">Wickham (<a href="#ref-ggplot2" role="doc-biblioref">2016</a>)</span> powerful and flexible system for creating static data visualizations using the grammar of graphics.<br>
-</p>
-<p>- <strong>janitor:</strong> Offers simple functions for cleaning and formatting data, especially column names and tabular summaries.</p>
-<hr>
-<hr>
+<p>To understand the Stata code, we read it line by line, ran small chunks, and checked outputs. We gradually built up a mirrored structure in R. Publishing to GitHub gave us visibility, transparency, and a good team workflow.</p>
 </section>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">✅ Next Steps</h2>
+<section id="challenges-and-issues" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> 5. Challenges and Issues</h1>
+<p>Key challenges included:</p>
+<ol type="1">
+<li>Teamwork with someone working remotely across time zones<br>
+</li>
+<li>Interpreting Stata scripts<br>
+</li>
+<li>Handling GitHub publishing issues<br>
+</li>
+<li>Avoiding structural issues (e.g.&nbsp;misplaced index files)<br>
+</li>
+<li>RStudio crashing under memory stress<br>
+</li>
+<li>Fine-tuning ggplot2 visualizations</li>
+</ol>
+<p>Translation from Stata to R was not always 1-to-1. Many Stata commands have no R equivalent, and formatting figures to match the paper was a tedious but valuable learning experience.</p>
+</section>
+<section id="replication-process" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> 6. Replication Process</h1>
+<p>We replicated:</p>
 <ul>
-<li>Expand replication to additional tables<br>
+<li><strong>Figure 1</strong>: Time series of prices across retailers<br>
 </li>
-<li>Align replication figures tables to those in the paper<br>
-</li>
-<li>Fix replication issues<br>
-</li>
-<li>Create an academic-style appendix</li>
+<li><strong>Table 1</strong>: Daily statistics for hourly price data</li>
 </ul>
+<section id="tools-used" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="tools-used"><span class="header-section-number">7.1</span> Tools Used</h2>
+<ul>
+<li><strong>R</strong>: Data analysis and visualization<br>
+</li>
+<li><strong>Quarto</strong>: For publishing<br>
+</li>
+<li><strong>GitHub Pages</strong>: For sharing results</li>
+</ul>
+</section>
+<section id="libraries" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="libraries"><span class="header-section-number">7.2</span> Libraries</h2>
+<ul>
+<li><code>haven</code>: Read <code>.dta</code> files from Stata<br>
+</li>
+<li><code>dplyr</code>: Data manipulation<br>
+</li>
+<li><code>ggplot2</code>: Plotting<br>
+</li>
+<li><code>janitor</code>: Cleaning column names<br>
+</li>
+<li><code>patchwork</code>: For aligning plots<br>
+</li>
+<li><code>gt</code>: For tables</li>
+</ul>
+</section>
+<section id="understanding-the-data-and-folder-structure" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="understanding-the-data-and-folder-structure"><span class="header-section-number">7.3</span> Understanding the Data and Folder Structure</h2>
+<p>The structure of the replication package included folders for <code>data/</code>, <code>output/</code>, and <code>programs/</code>. The Stata script <code>07_summary_stats.do</code> was central.</p>
+<p>We decoded the logic of this script using ChatGPT and manual trial/error, then rebuilt the pipeline in R with tidyverse code.</p>
+</section>
+<section id="rebuilding-figures" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="rebuilding-figures"><span class="header-section-number">7.4</span> Rebuilding Figures</h2>
+<p>Replicating <strong>Figure 2</strong> took effort due to:</p>
+<ul>
+<li>Matching multi-line styles<br>
+</li>
+<li>Aligning colors, axis breaks, layout<br>
+</li>
+<li>Using <code>plot_layout()</code> from patchwork for side-by-side layout<br>
+</li>
+<li>Careful filtering and x-axis limits</li>
+</ul>
+<p>Final figures used <code>ggsave()</code> for reproducibility.</p>
+</section>
+<section id="reproducing-tables" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="reproducing-tables"><span class="header-section-number">7.5</span> Reproducing Tables</h2>
+<p>For <strong>Table 1</strong>, we:</p>
+<ol type="1">
+<li>Collapsed data to product-date level<br>
+</li>
+<li>Aggregated to website-date level<br>
+</li>
+<li>Created final summaries with averages<br>
+</li>
+<li>Added a “Total” row<br>
+</li>
+<li>Used <code>gt()</code> and transposition to format the output</li>
+</ol>
+<p>Even though we didn’t include bootstrapped standard errors, the descriptive statistics closely matched.</p>
+</section>
+<section id="debugging" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="debugging"><span class="header-section-number">7.6</span> Debugging</h2>
+<p>Matching numbers exactly was hard due to:</p>
+<ul>
+<li>Different defaults in R vs.&nbsp;Stata<br>
+</li>
+<li>Rounding inconsistencies<br>
+</li>
+<li>Handling of missing values</li>
+</ul>
+<p>We followed strict filtering rules and used consistent naming via <code>janitor::clean_names()</code> to minimize discrepancies.</p>
+</section>
+</section>
+<section id="remaining-issues-and-open-challenges" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> 7. Remaining Issues and Open Challenges</h1>
+<p>While we replicated the core results, we had limitations:</p>
+<ul>
+<li>Undocumented parts in Stata code<br>
+</li>
+<li>Minor mismatches in decimal rounding<br>
+</li>
+<li>ggplot2 vs.&nbsp;Stata styling differences<br>
+</li>
+<li>Some trial-and-error guesses due to undocumented logic</li>
+</ul>
+<p>We focused on logic and reproducibility more than perfect visual fidelity.</p>
+</section>
+<section id="what-wed-do-with-more-time" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> 8. What We’d Do with More Time</h1>
+<p>Given more time, we would:</p>
+<ul>
+<li>Audit each transformation step<br>
+</li>
+<li>Modularize our R code into reusable functions<br>
+</li>
+<li>Automate figure checking with <code>vdiffr</code><br>
+</li>
+<li>Apply the code to another industry</li>
+</ul>
+</section>
+<section id="reflections-on-the-process" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> 9. Reflections on the Process</h1>
+<p>This project showed us how non-linear, trial-based, and conceptually rich replication work can be. Translating workflows across languages isn’t just technical — it’s about reconstructing decisions.</p>
+<p>Even when we matched outputs, we learned how logic and intention matter more than exact syntax. Replicating the <strong>reasoning</strong> behind the paper gave us insight into both research and technical thinking.</p>
+<hr>
+<blockquote class="blockquote">
+<p><em>“Successful replication isn’t about looking identical. It’s about reaching the same conclusion through sound logic and thoughtful reconstruction.”</em></p>
+</blockquote>
 
-</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-Brown2023" class="csl-entry" role="listitem">
 Brown, Zach Y., and Alexander MacKay. 2023. <span>“Competition in Pricing Algorithms.”</span> <em>American Economic Journal: Microeconomics</em> 15 (2): 109–56. <a href="https://doi.org/10.1257/mic.20210158">https://doi.org/10.1257/mic.20210158</a>.
-</div>
-<div id="ref-ggplot2" class="csl-entry" role="listitem">
-Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
-</div>
-<div id="ref-dplyr" class="csl-entry" role="listitem">
-Wickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis Vaughan. 2025. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://dplyr.tidyverse.org">https://dplyr.tidyverse.org</a>.
-</div>
-<div id="ref-haven1" class="csl-entry" role="listitem">
-Wickham, Hadley, Evan Miller, and Danny Smith. 2025. <em>Haven: Import and Export ’SPSS’, ’Stata’ and ’SAS’ Files</em>. <a href="https://haven.tidyverse.org">https://haven.tidyverse.org</a>.
 </div>
 </div></section></div></main>
 <!-- /main column -->

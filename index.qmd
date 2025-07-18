@@ -31,24 +31,41 @@ editor: visual
 
 ------------------------------------------------------------------------
 
-## 🔍 About This Project
-
-This is part of a research exercise for replicating graphs and tables from [@Brown2023] using **R** and **Quarto**.
-
-We focus on:
-
--   Summary statistics\
--   Replication code using R\
--   Data cleaning and transformation
-
-------------------------------------------------------------------------
-
 # 🎯 Research Replication
 
 We aim to replicate tables and charts taken from the paper ***Competition in Pricing Algorithms*** [@Brown2023], that was Published in *American Economic Review: Microeconomics*\
 
 Please follow the next link to find the replication package and further information:\
 **DOI:** [10.1257/mic.20210158](https://doi.org/10.1257/mic.20210158)
+
+------------------------------------------------------------------------
+
+## 🎥 View Our Hand Out Documents
+
+Click on the presentation you want to view:\
+👉 **Christian's Handout:** [Report.html](Report.html), [Report.pdf](Report.pdf), [Report.qmd](Report.qmd)\
+👉 [Tony](https://nanaosei95.github.io/replicapresentation)
+
+------------------------------------------------------------------------
+
+## 🎥 View the Presentation
+
+Click on the presentation you want to view:\
+👉 **Our Landing Page:** [index.html](index.html), [index.pdf](index.pdf), [index.qmd](index.qmd)\
+👉 **Christian's Presentation:** [Presentation.html](try.html), [Presentation.pdf](try.pdf), [Presentation.qmd](try.qmd)\
+👉 [Tony](https://nanaosei95.github.io/replicapresentation)
+
+------------------------------------------------------------------------
+
+## 📁 Repository
+
+View the full repository here:\
+[🔗 github.com/christianfcasas/ProjectData](https://github.com/christianfcasas/ProjectData)
+\
+\
+Tony's Repositories:\
+- [🔗 Code and Replication](https://github.com/Nanaosei95/Replica.git)
+- [🔗 Presentation](https://github.com/Nanaosei95/replicapresentation.git)
 
 ------------------------------------------------------------------------
 
@@ -69,35 +86,6 @@ Please follow the next link to find the replication package and further informat
 \-       **janitor:** Offers simple functions for cleaning and formatting data, especially column names and tabular summaries.
 
 ------------------------------------------------------------------------
-
-## 📁 Repository
-
-View the full repository here:\
-[🔗 github.com/christianfcasas/ProjectData](https://github.com/christianfcasas/ProjectData)
-\
-\
-Tony's Repositories:\
-- [🔗 Code and Replication](https://github.com/Nanaosei95/Replica.git)
-- [🔗 Presentation](https://github.com/Nanaosei95/replicapresentation.git)
-
-------------------------------------------------------------------------
-
-## 🎥 View the Presentation
-Click on the presentation you want to view:\
-👉 [Christian](try.html)\
-👉 [Tony](https://nanaosei95.github.io/replicapresentation)
-
-------------------------------------------------------------------------
-
-## 📄 Downloadable Version ('pdf' and 'html')
-
-**pdf:**\
-[📥 Index PDF Version](index.pdf)\
-[📥 Presentation PDF Version](try.pdf)
-
-**html:**\
-[📥 Index PDF Version](index.html)\
-[📥 Presentation PDF Version](try.html)
 
 ------------------------------------------------------------------------
 
