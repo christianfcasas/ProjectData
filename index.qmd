@@ -45,7 +45,7 @@ Please follow the next link to find the replication package and further informat
 
 Click on the handout document you want to review:\
 👉 **Christian's Handout:** [Report.html](Report.html), [Report.pdf](Report.pdf), [Report.qmd](Report.qmd)\
-👉 [Tony](https://nanaosei95.github.io/replicapresentation)
+👉 **Tony's Handout:** [Report.html](https://nanaosei95.github.io/replication-report/), [Report.pdf](https://nanaosei95.github.io/replication-report/apa-report.pdf), [Report.qmd](https://github.com/Nanaosei95/replication-report/blob/main/docs/apa-report.qmd)\
 
 ------------------------------------------------------------------------
 
